@@ -37,7 +37,7 @@ public class Board extends JPanel implements ActionListener {
         this.setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
         this.pieces = new ArrayList<>();
         this.points = 0;
-        this.delay = 6000;
+        this.delay = 600;
         this.initGame();
     }
 
@@ -50,20 +50,20 @@ public class Board extends JPanel implements ActionListener {
 
     private Figure getRandomFigure() {
         Random rng = new Random();
-        int figureNumber = 3; //rng.nextInt(7);
+        int figureNumber = rng.nextInt(7);
         switch (figureNumber) {
             case 1:
                 return new ReverseL(); //ок
             case 2:
                 return new L(); //ok
             case 3:
-                return new S();
+                return new S(); //almost
             case 4:
-                return new ReverseS();
+                return new ReverseS(); //almost
             case 5:
                 return new Square(); //ok
             case 6:
-                return new T();
+                return new T(); //ок
             default:
                 return new Stick(); //ok
         }
