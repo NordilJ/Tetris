@@ -199,7 +199,15 @@ public class Board extends JPanel implements ActionListener {
             for (Integer key : filledRows.keySet()) {
                 List<Piece> rowPieces = filledRows.get(key);
                 if (rowPieces.size() == 13) {
-                    points += IN_GAME_SCORE;
+                    if (rowFallCount == 0) {
+                        points += IN_GAME_SCORE;
+                    } else if (rowFallCount == 1) {
+                        points += IN_GAME_SCORE + 10;
+                    } else if (rowFallCount == 2) {
+                        points += IN_GAME_SCORE + 30;
+                    } else {
+                        points += IN_GAME_SCORE + 50;
+                    }
                     rowFallCount++;
                 } else {
                     for (Piece rowPiece : rowPieces) {
