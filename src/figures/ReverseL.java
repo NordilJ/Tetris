@@ -57,7 +57,7 @@ public class ReverseL extends Figure {
             newPieces.add(new Piece(new Position(piece.position.x, piece.position.y)));
         }
 
-        if (this.shape == 1) { // ok
+        if (this.shape == 1) {
             int x = newPieces.get(1).position.x;
             int y = newPieces.get(1).position.y;
             newPieces.get(0).position.x = x - Piece.PEACE_SIZE;
@@ -68,7 +68,7 @@ public class ReverseL extends Figure {
             newPieces.get(2).position.y = y;
             newPieces.get(3).position.x = x;
             newPieces.get(3).position.y = y - Piece.PEACE_SIZE;
-        } else if (this.shape == 2) { //ok
+        } else if (this.shape == 2) {
             int x = newPieces.get(1).position.x;
             int y = newPieces.get(1).position.y;
             newPieces.get(0).position.x = x - Piece.PEACE_SIZE;
@@ -79,28 +79,28 @@ public class ReverseL extends Figure {
             newPieces.get(2).position.y = y - Piece.PEACE_SIZE;
             newPieces.get(3).position.x = x + Piece.PEACE_SIZE;
             newPieces.get(3).position.y = y - Piece.PEACE_SIZE;
-        } else if (this.shape == 3) { //ok
+        } else if (this.shape == 3) {
             int x = newPieces.get(0).position.x;
             int y = newPieces.get(0).position.y;
             newPieces.get(0).position.x = x + Piece.PEACE_SIZE;
             newPieces.get(0).position.y = y + (2 * Piece.PEACE_SIZE);
-            newPieces.get(1).position.x = x  + Piece.PEACE_SIZE;
+            newPieces.get(1).position.x = x + Piece.PEACE_SIZE;
             newPieces.get(1).position.y = y + Piece.PEACE_SIZE;
             newPieces.get(2).position.x = x + Piece.PEACE_SIZE;
             newPieces.get(2).position.y = y;
-            newPieces.get(3).position.x = x+ (2 * Piece.PEACE_SIZE);
+            newPieces.get(3).position.x = x + (2 * Piece.PEACE_SIZE);
             newPieces.get(3).position.y = y;
         } else if (this.shape == 4) {
             int x = newPieces.get(3).position.x;
             int y = newPieces.get(3).position.y;
-            newPieces.get(0).position.x = x- (2 * Piece.PEACE_SIZE);
+            newPieces.get(0).position.x = x - (2 * Piece.PEACE_SIZE);
             newPieces.get(0).position.y = y + Piece.PEACE_SIZE;
             newPieces.get(1).position.x = x - Piece.PEACE_SIZE;
             newPieces.get(1).position.y = y + Piece.PEACE_SIZE;
-            newPieces.get(2).position.x = x ;
+            newPieces.get(2).position.x = x;
             newPieces.get(2).position.y = y + Piece.PEACE_SIZE;
-            newPieces.get(3).position.x = x ;
-            newPieces.get(3).position.y = y+ (2 * Piece.PEACE_SIZE);
+            newPieces.get(3).position.x = x;
+            newPieces.get(3).position.y = y + (2 * Piece.PEACE_SIZE);
         }
 
         return newPieces;

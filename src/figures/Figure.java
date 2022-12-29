@@ -17,7 +17,7 @@ public abstract class Figure {
 
     public abstract Color getColor();
 
-    public void draw(Graphics g){
+    public void draw(Graphics g) {
         for (Piece piece : pieces) {
             g.setColor(this.getColor());
             g.fillRoundRect(piece.position.x, piece.position.y, Piece.PEACE_SIZE, Piece.PEACE_SIZE, Piece.ARC, Piece.ARC);
@@ -35,37 +35,37 @@ public abstract class Figure {
         }
     }
 
-    public boolean canMove(Direction direction, List<Piece> boardPieces){
-        switch (direction){
+    public boolean canMove(Direction direction, List<Piece> boardPieces) {
+        switch (direction) {
             case DOWN:
-                if (this.pieces.stream().anyMatch(piece -> piece.position.y == 610)){
+                if (this.pieces.stream().anyMatch(piece -> piece.position.y == 610)) {
                     return false;
                 }
 
                 if (this.pieces.stream().anyMatch(piece ->
                         boardPieces.stream().anyMatch(boardPiece -> piece.position.y + Piece.PEACE_SIZE == boardPiece.position.y
-                                && piece.position.x == boardPiece.position.x))){
+                                && piece.position.x == boardPiece.position.x))) {
                     return false;
                 }
 
                 return true;
             case LEFT:
-                if (this.pieces.stream().anyMatch(piece -> piece.position.x == 20)){
+                if (this.pieces.stream().anyMatch(piece -> piece.position.x == 20)) {
                     return false;
                 }
                 if (this.pieces.stream().anyMatch(piece ->
                         boardPieces.stream().anyMatch(boardPiece -> piece.position.x - Piece.PEACE_SIZE == boardPiece.position.x
-                                && piece.position.y == boardPiece.position.y))){
+                                && piece.position.y == boardPiece.position.y))) {
                     return false;
                 }
                 return true;
             case RIGHT:
-                if (this.pieces.stream().anyMatch(piece -> piece.position.x == 380)){
+                if (this.pieces.stream().anyMatch(piece -> piece.position.x == 380)) {
                     return false;
                 }
                 if (this.pieces.stream().anyMatch(piece ->
                         boardPieces.stream().anyMatch(boardPiece -> piece.position.x + Piece.PEACE_SIZE == boardPiece.position.x
-                                && piece.position.y == boardPiece.position.y))){
+                                && piece.position.y == boardPiece.position.y))) {
                     return false;
                 }
 
@@ -76,22 +76,22 @@ public abstract class Figure {
     }
 
     public void move(Direction direction) {
-        switch (direction){
+        switch (direction) {
             case DOWN:
                 for (Piece piece : this.pieces) {
-                    piece.position.y+=Piece.PEACE_SIZE;
+                    piece.position.y += Piece.PEACE_SIZE;
                 }
 
                 break;
             case LEFT:
                 for (Piece piece : this.pieces) {
-                    piece.position.x-=Piece.PEACE_SIZE;
+                    piece.position.x -= Piece.PEACE_SIZE;
                 }
 
                 break;
             case RIGHT:
                 for (Piece piece : this.pieces) {
-                    piece.position.x+=Piece.PEACE_SIZE;
+                    piece.position.x += Piece.PEACE_SIZE;
                 }
 
                 break;

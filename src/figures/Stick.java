@@ -39,7 +39,7 @@ public class Stick extends Figure {
     @Override
     public void rotate() {
         this.pieces = this.getRotatedShape();
-        if (this.shape == 1){
+        if (this.shape == 1) {
             this.shape = 2;
         } else {
             this.shape = 1;
@@ -52,15 +52,15 @@ public class Stick extends Figure {
             newPieces.add(new Piece(new Position(piece.position.x, piece.position.y)));
         }
 
-        if (this.shape == 1){
+        if (this.shape == 1) {
             int x = newPieces.get(2).position.x;
-            int y = newPieces.get(2).position.y -(3 * Piece.PEACE_SIZE);
+            int y = newPieces.get(2).position.y - (3 * Piece.PEACE_SIZE);
             for (int i = 0; i < newPieces.size(); i++) {
                 newPieces.get(i).position.x = x;
                 newPieces.get(i).position.y = (i * Piece.PEACE_SIZE) + y;
             }
         } else {
-            int x = newPieces.get(3).position.x -(2 * Piece.PEACE_SIZE);
+            int x = newPieces.get(3).position.x - (2 * Piece.PEACE_SIZE);
             int y = newPieces.get(3).position.y;
             for (int i = 0; i < newPieces.size(); i++) {
                 newPieces.get(i).position.x = (i * Piece.PEACE_SIZE) + x;
@@ -76,11 +76,11 @@ public class Stick extends Figure {
         List<Piece> rotatedPieces = this.getRotatedShape();
         if (rotatedPieces.stream().anyMatch(rotatedPiece -> boardPieces.
                 stream().anyMatch(boardPiece -> rotatedPiece.position.x == boardPiece.position.x
-                        && rotatedPiece.position.y == boardPiece.position.y))){
+                        && rotatedPiece.position.y == boardPiece.position.y))) {
             return false;
         }
 
-        if (rotatedPieces.stream().anyMatch(rotatedPiece -> rotatedPiece.position.x < 20 || rotatedPiece.position.x > 380)){
+        if (rotatedPieces.stream().anyMatch(rotatedPiece -> rotatedPiece.position.x < 20 || rotatedPiece.position.x > 380)) {
             return false;
         }
 

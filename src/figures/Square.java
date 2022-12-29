@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Square extends Figure{
+public class Square extends Figure {
     private static final Color COLOR = Color.PINK;
 
     public Square() {
